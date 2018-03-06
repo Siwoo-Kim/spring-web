@@ -6,6 +6,7 @@ import lombok.ToString;
 import org.castor.core.util.Assert;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
 import java.io.Serializable;
@@ -21,11 +22,11 @@ public class Singer implements Serializable{
     @Version
     private int version;
 
-    @NotEmpty(message = "{validation.firstName.NotEmpty.message}")
+    @NotBlank(message = "{validation.firstname.NotBlank.message}")
     @Size(min = 3,max=60,message = "{validation.firstName.Size.message}")
     private String firstName;
 
-    @NotEmpty(message = "{validation.lastName.NotEmpty.message}")
+    @NotBlank(message = "{validation.lastname.NotBlank.message}")
     @Size(min = 3,max=60,message = "{validation.lastName.Size.message}")
     private String lastName;
 
